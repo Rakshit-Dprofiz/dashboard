@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:trashee_dashboard/app.dart';
+import 'package:trashee_dashboard/features/screens/login.dart';
 import 'package:trashee_dashboard/routes/routes.dart';
 
 class TAppRoute{
@@ -7,5 +8,7 @@ class TAppRoute{
     // GetPage(name: TRoutes.firstScreen, page: () => const FirstScreen()),
     // GetPage(name: TRoutes.secondScreen, page: () => const SecondScreen()),
     // GetPage(name: TRoutes.secondScreenWithUID, page: () => const SecondScreen()),
+
+    GetPage(name: TRoutes.login, page: () =>  LoginScreen())
   ];
 }

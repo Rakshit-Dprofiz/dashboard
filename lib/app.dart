@@ -2,6 +2,8 @@
 import 'package:get/get.dart';
 import 'package:trashee_dashboard/common/widgets/layouts/templates/site_layout.dart';
 import 'package:trashee_dashboard/common/widgets/responsive/responsive_design.dart';
+import 'package:trashee_dashboard/routes/app_routs.dart';
+import 'package:trashee_dashboard/routes/routes.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -10,7 +12,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ResponsiveDesignScreen(),
+      getPages: TAppRoute.pages ,
+      initialRoute: TRoutes.login,
     );
   }
 }
@@ -98,306 +101,306 @@ class SecondScreen extends StatelessWidget {
   }
 }
 
-class ResponsiveDesignScreen extends StatelessWidget {
-  const ResponsiveDesignScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return TSiteTemplate(desktop: Desktop(), tablet: Tablet(),mobile: Mobile());
-  }
-}
-
-class Tablet extends StatelessWidget {
-  const Tablet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // Box 1
-          Expanded(
-            child: Container(
-              height: 450,
-              decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 8,
-                    offset: Offset(0, 4),
-                  ),
-                ],
-              ),
-              margin: const EdgeInsets.only(right: 20),
-              child: Center(
-                child: Text(
-                  'Tablet Box 1',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue.shade700,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          // Box 2
-          Expanded(
-            child: Container(
-              height: 450,
-              decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 8,
-                    offset: Offset(0, 4),
-                  ),
-                ],
-              ),
-              margin: const EdgeInsets.only(right: 20),
-              child: Center(
-                child: Text(
-                  'Tablet Box 2',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue.shade700,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          // Box 3
-          Expanded(
-            child: Container(
-              height: 450,
-              decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 8,
-                    offset: Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Text(
-                  'Tablet Box 3',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue.shade700,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-
- class Mobile extends StatelessWidget {
-   const Mobile({super.key});
-
-   @override
-   Widget build(BuildContext context) {
-     return Padding(
-       padding: const EdgeInsets.all(8.0),
-       child: Column(
-         crossAxisAlignment: CrossAxisAlignment.center,
-         children: [
-           Container(
-             height: 150,
-             width: double.infinity,
-             margin: const EdgeInsets.only(bottom: 20),
-             decoration: BoxDecoration(
-               color: Colors.blue.withOpacity(0.2),
-               borderRadius: BorderRadius.circular(12),
-               boxShadow: [
-                 BoxShadow(
-                   color: Colors.black.withOpacity(0.1),
-                   blurRadius: 8,
-                   offset: Offset(0, 4),
-                 ),
-               ],
-             ),
-             child: Center(
-               child: Text(
-                 'Box 1',
-                 style: TextStyle(
-                   fontSize: 18,
-                   fontWeight: FontWeight.bold,
-                   color: Colors.blue.shade700,
-                 ),
-               ),
-             ),
-           ),
-           Expanded(  // Added Expanded widget to avoid overflow
-             child: Container(
-               width: double.infinity,
-               margin: const EdgeInsets.only(bottom: 20),
-               decoration: BoxDecoration(
-                 color: Colors.blue.withOpacity(0.2),
-                 borderRadius: BorderRadius.circular(12),
-                 boxShadow: [
-                   BoxShadow(
-                     color: Colors.black.withOpacity(0.1),
-                     blurRadius: 8,
-                     offset: Offset(0, 4),
-                   ),
-                 ],
-               ),
-               child: Center(
-                 child: Text(
-                   'Box 2',
-                   style: TextStyle(
-                     fontSize: 18,
-                     fontWeight: FontWeight.bold,
-                     color: Colors.blue.shade700,
-                   ),
-                 ),
-               ),
-             ),
-           ),
-           Expanded(  // Added Expanded widget to avoid overflow
-             child: Container(
-               width: double.infinity,
-               decoration: BoxDecoration(
-                 color: Colors.blue.withOpacity(0.2),
-                 borderRadius: BorderRadius.circular(12),
-                 boxShadow: [
-                   BoxShadow(
-                     color: Colors.black.withOpacity(0.1),
-                     blurRadius: 8,
-                     offset: Offset(0, 4),
-                   ),
-                 ],
-               ),
-               child: Center(
-                 child: Text(
-                   'Box 3',
-                   style: TextStyle(
-                     fontSize: 18,
-                     fontWeight: FontWeight.bold,
-                     color: Colors.blue.shade700,
-                   ),
-                 ),
-               ),
-             ),
-           ),
-         ],
-       ),
-     );
-   }
- }
-
-
-class Desktop extends StatelessWidget {
-  const Desktop({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          // Box 1
-          Expanded(
-            child: Container(
-              height: 500,
-              decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 8,
-                    offset: Offset(0, 4),
-                  ),
-                ],
-              ),
-              margin: const EdgeInsets.only(right: 20),
-              child: Center(
-                child: Text(
-                  'Desktop Box 1',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue.shade700,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          // Box 2
-          Expanded(
-            child: Container(
-              height: 500,
-              decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 8,
-                    offset: Offset(0, 4),
-                  ),
-                ],
-              ),
-              margin: const EdgeInsets.only(right: 20),
-              child: Center(
-                child: Text(
-                  'Desktop Box 2',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue.shade700,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          // Box 3
-          Expanded(
-            child: Container(
-              height: 500,
-              decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 8,
-                    offset: Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Text(
-                  'Desktop Box 3',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue.shade700,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+// class ResponsiveDesignScreen extends StatelessWidget {
+//   const ResponsiveDesignScreen({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return TSiteTemplate(desktop: Desktop(), tablet: Tablet(),mobile: Mobile());
+//   }
+// }
+//
+// class Tablet extends StatelessWidget {
+//   const Tablet({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.all(8.0),
+//       child: Row(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           // Box 1
+//           Expanded(
+//             child: Container(
+//               height: 450,
+//               decoration: BoxDecoration(
+//                 color: Colors.blue.withOpacity(0.2),
+//                 borderRadius: BorderRadius.circular(12),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black.withOpacity(0.1),
+//                     blurRadius: 8,
+//                     offset: Offset(0, 4),
+//                   ),
+//                 ],
+//               ),
+//               margin: const EdgeInsets.only(right: 20),
+//               child: Center(
+//                 child: Text(
+//                   'Tablet Box 1',
+//                   style: TextStyle(
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.blue.shade700,
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//           // Box 2
+//           Expanded(
+//             child: Container(
+//               height: 450,
+//               decoration: BoxDecoration(
+//                 color: Colors.blue.withOpacity(0.2),
+//                 borderRadius: BorderRadius.circular(12),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black.withOpacity(0.1),
+//                     blurRadius: 8,
+//                     offset: Offset(0, 4),
+//                   ),
+//                 ],
+//               ),
+//               margin: const EdgeInsets.only(right: 20),
+//               child: Center(
+//                 child: Text(
+//                   'Tablet Box 2',
+//                   style: TextStyle(
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.blue.shade700,
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//           // Box 3
+//           Expanded(
+//             child: Container(
+//               height: 450,
+//               decoration: BoxDecoration(
+//                 color: Colors.blue.withOpacity(0.2),
+//                 borderRadius: BorderRadius.circular(12),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black.withOpacity(0.1),
+//                     blurRadius: 8,
+//                     offset: Offset(0, 4),
+//                   ),
+//                 ],
+//               ),
+//               child: Center(
+//                 child: Text(
+//                   'Tablet Box 3',
+//                   style: TextStyle(
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.blue.shade700,
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+//
+//
+//  class Mobile extends StatelessWidget {
+//    const Mobile({super.key});
+//
+//    @override
+//    Widget build(BuildContext context) {
+//      return Padding(
+//        padding: const EdgeInsets.all(8.0),
+//        child: Column(
+//          crossAxisAlignment: CrossAxisAlignment.center,
+//          children: [
+//            Container(
+//              height: 150,
+//              width: double.infinity,
+//              margin: const EdgeInsets.only(bottom: 20),
+//              decoration: BoxDecoration(
+//                color: Colors.blue.withOpacity(0.2),
+//                borderRadius: BorderRadius.circular(12),
+//                boxShadow: [
+//                  BoxShadow(
+//                    color: Colors.black.withOpacity(0.1),
+//                    blurRadius: 8,
+//                    offset: Offset(0, 4),
+//                  ),
+//                ],
+//              ),
+//              child: Center(
+//                child: Text(
+//                  'Box 1',
+//                  style: TextStyle(
+//                    fontSize: 18,
+//                    fontWeight: FontWeight.bold,
+//                    color: Colors.blue.shade700,
+//                  ),
+//                ),
+//              ),
+//            ),
+//            Expanded(  // Added Expanded widget to avoid overflow
+//              child: Container(
+//                width: double.infinity,
+//                margin: const EdgeInsets.only(bottom: 20),
+//                decoration: BoxDecoration(
+//                  color: Colors.blue.withOpacity(0.2),
+//                  borderRadius: BorderRadius.circular(12),
+//                  boxShadow: [
+//                    BoxShadow(
+//                      color: Colors.black.withOpacity(0.1),
+//                      blurRadius: 8,
+//                      offset: Offset(0, 4),
+//                    ),
+//                  ],
+//                ),
+//                child: Center(
+//                  child: Text(
+//                    'Box 2',
+//                    style: TextStyle(
+//                      fontSize: 18,
+//                      fontWeight: FontWeight.bold,
+//                      color: Colors.blue.shade700,
+//                    ),
+//                  ),
+//                ),
+//              ),
+//            ),
+//            Expanded(  // Added Expanded widget to avoid overflow
+//              child: Container(
+//                width: double.infinity,
+//                decoration: BoxDecoration(
+//                  color: Colors.blue.withOpacity(0.2),
+//                  borderRadius: BorderRadius.circular(12),
+//                  boxShadow: [
+//                    BoxShadow(
+//                      color: Colors.black.withOpacity(0.1),
+//                      blurRadius: 8,
+//                      offset: Offset(0, 4),
+//                    ),
+//                  ],
+//                ),
+//                child: Center(
+//                  child: Text(
+//                    'Box 3',
+//                    style: TextStyle(
+//                      fontSize: 18,
+//                      fontWeight: FontWeight.bold,
+//                      color: Colors.blue.shade700,
+//                    ),
+//                  ),
+//                ),
+//              ),
+//            ),
+//          ],
+//        ),
+//      );
+//    }
+//  }
+//
+//
+// class Desktop extends StatelessWidget {
+//   const Desktop({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.all(8.0),
+//       child: Row(
+//         children: [
+//           // Box 1
+//           Expanded(
+//             child: Container(
+//               height: 500,
+//               decoration: BoxDecoration(
+//                 color: Colors.blue.withOpacity(0.2),
+//                 borderRadius: BorderRadius.circular(12),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black.withOpacity(0.1),
+//                     blurRadius: 8,
+//                     offset: Offset(0, 4),
+//                   ),
+//                 ],
+//               ),
+//               margin: const EdgeInsets.only(right: 20),
+//               child: Center(
+//                 child: Text(
+//                   'Desktop Box 1',
+//                   style: TextStyle(
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.blue.shade700,
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//           // Box 2
+//           Expanded(
+//             child: Container(
+//               height: 500,
+//               decoration: BoxDecoration(
+//                 color: Colors.blue.withOpacity(0.2),
+//                 borderRadius: BorderRadius.circular(12),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black.withOpacity(0.1),
+//                     blurRadius: 8,
+//                     offset: Offset(0, 4),
+//                   ),
+//                 ],
+//               ),
+//               margin: const EdgeInsets.only(right: 20),
+//               child: Center(
+//                 child: Text(
+//                   'Desktop Box 2',
+//                   style: TextStyle(
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.blue.shade700,
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//           // Box 3
+//           Expanded(
+//             child: Container(
+//               height: 500,
+//               decoration: BoxDecoration(
+//                 color: Colors.blue.withOpacity(0.2),
+//                 borderRadius: BorderRadius.circular(12),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black.withOpacity(0.1),
+//                     blurRadius: 8,
+//                     offset: Offset(0, 4),
+//                   ),
+//                 ],
+//               ),
+//               child: Center(
+//                 child: Text(
+//                   'Desktop Box 3',
+//                   style: TextStyle(
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.blue.shade700,
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
