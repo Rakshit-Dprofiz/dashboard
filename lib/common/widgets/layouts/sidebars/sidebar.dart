@@ -222,7 +222,7 @@ class TSideBar extends StatelessWidget {
         // style: TextStyle(fontSize: 16), // Optional: Adjust the font size
       ),
       children:
-      item.subItems.map((subItem) => _buildSubMenuItem(subItem)).toList(),
+          item.subItems.map((subItem) => _buildSubMenuItem(subItem)).toList(),
     );
   }
 
@@ -290,7 +290,7 @@ final List<MenuItem> menuItems = [
   ]),
 
   //Offers
-  MenuItem(icon: Icons.people, title: 'Offers', isExpandable: true , subItems: [
+  MenuItem(icon: Icons.people, title: 'Offers', isExpandable: true, subItems: [
     MenuItem(icon: Icons.dashboard, title: 'All Offers'),
     MenuItem(icon: Icons.drafts, title: 'Individual Approval Offers'),
     MenuItem(icon: Icons.add, title: 'Individual Approval Waiting Offers'),
@@ -298,8 +298,27 @@ final List<MenuItem> menuItems = [
     MenuItem(icon: Icons.ice_skating, title: 'Bulk Approval Waiting Offers'),
     MenuItem(icon: Icons.ice_skating, title: 'Bulk Approval Waiting Offers'),
   ]),
-  MenuItem(icon: Icons.shopping_cart, title: 'User', isExpandable: true),
-  MenuItem(icon: Icons.settings, title: 'Pay & plan', isExpandable: true),
-  MenuItem(icon: Icons.analytics, title: 'Account Pages', isExpandable: true),
-  MenuItem(icon: Icons.help_outline, title: 'Help & getting started', badge: 8),
+
+  //Users
+  MenuItem(
+      icon: Icons.shopping_cart,
+      title: 'User',
+      isExpandable: true,
+      subItems: [
+        MenuItem(icon: Icons.dashboard, title: 'Customer'),
+      ]),
+
+  // Pay & plan
+  MenuItem(
+      icon: Icons.settings,
+      title: 'Pay & plan',
+      isExpandable: true,
+      subItems: [
+        MenuItem(icon: Icons.dashboard, title: 'Payment'),
+        MenuItem(icon: Icons.drafts, title: 'Subscription Plan'),
+      ]),
+  MenuItem(icon: Icons.analytics, title: 'Account Pages', isExpandable: true, subItems: [
+    MenuItem(icon: Icons.dashboard, title: 'Profile'),
+    MenuItem(icon: Icons.drafts, title: 'Logout'),
+  ]),
 ];
