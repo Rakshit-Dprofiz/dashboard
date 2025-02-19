@@ -28,8 +28,6 @@
 //   }
 // }
 
-
-
 import 'package:flutter/material.dart';
 import 'package:trashee_dashboard/common/widgets/containers/container.dart';
 import 'package:trashee_dashboard/common/widgets/layouts/headers/header.dart';
@@ -37,7 +35,7 @@ import 'package:trashee_dashboard/common/widgets/layouts/sidebars/sidebar.dart';
 import 'package:trashee_dashboard/utils/constants/colors.dart';
 
 class DesktopLayout extends StatelessWidget {
-   DesktopLayout({super.key, this.body});
+  DesktopLayout({super.key, this.body});
   final Widget? body;
 
   // final GlobalKey<ScaffoldState> scaffoldKey =  GlobalKey();
@@ -55,7 +53,7 @@ class DesktopLayout extends StatelessWidget {
 
           // Main content area
           Expanded(
-            flex: 5,// Makes the content area larger than the drawer
+            flex: 5, // Makes the content area larger than the drawer
             child: Column(
               children: [
                 // Header
@@ -63,11 +61,7 @@ class DesktopLayout extends StatelessWidget {
 
                 // Body with scroll support if content is too long
                 Expanded(
-                  child: body != null
-                      ? SingleChildScrollView(
-                    child: body!,
-                  )
-                      : const SizedBox(), // Empty state
+                  child: body ?? const SizedBox(), // Empty state
                 ),
               ],
             ),
