@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trashee_dashboard/common/widgets/layouts/templates/site_layout.dart';
-import 'package:trashee_dashboard/pages/dashboard/dashboard_desktop.dart';
-import 'package:trashee_dashboard/pages/dashboard/home_screen.dart';
+import 'package:trashee_dashboard/pages/dashboard/features/class/detail.dart';
+import 'package:trashee_dashboard/pages/dashboard/pages/dashboard.dart';
 import 'package:trashee_dashboard/routes/app_routs.dart';
 import 'package:trashee_dashboard/routes/routes.dart';
-import 'package:trashee_dashboard/utils/constants/colors.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -20,88 +19,93 @@ class App extends StatelessWidget {
   }
 }
 
-// class FirstScreen extends StatelessWidget {
-//   const FirstScreen({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('First Screen'),
-//         centerTitle: true,
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisSize: MainAxisSize.min,
-//           children: [
-//             Text('Navigation'),
-//             SizedBox(height: 20),
-//             SizedBox(
-//               width: 200,
-//               child: ElevatedButton(onPressed: () {
-//                 Navigator.of(context).push(
-//                   MaterialPageRoute(builder: (context) => SecondScreen()),
-//                 );
-//               }, child: Text('Default Navigation')),
-//             ),
-//             SizedBox(height: 15),
-//             SizedBox(
-//               width: 200,
-//               child: ElevatedButton(onPressed: () => Get.to(() => SecondScreen()), child: Text('Getx Navigation')),
-//             ),
-//             SizedBox(height: 50),
-//             Divider(),
-//             Text('Named Navigation'),
-//             SizedBox(height: 20),
-//             SizedBox(
-//               width: 250,
-//               child: ElevatedButton(onPressed: () {
-//                 Navigator.of(context).pushNamed('/second-screen');
-//               }, child: Text('Default Named Navigation')),
-//             ),
-//             SizedBox(height: 15),
-//             SizedBox(
-//               width: 200,
-//               child: ElevatedButton(onPressed: () => Get.toNamed('/second-screen'), child: Text('Getx Named Navigation')),
-//             ),
-//             SizedBox(height: 50),
-//             Divider(),
-//             Text('Pass Data betn Screens - GetX'),
-//             SizedBox(height: 20),
-//             SizedBox(
-//               width: 250,
-//               child: ElevatedButton(onPressed: () {
-//                 Navigator.of(context).pushNamed('/second-screen');
-//               }, child: Text('Default Named Navigation')),
-//             ),
-//             SizedBox(height: 15),
-//             SizedBox(
-//               width: 200,
-//               child: ElevatedButton(onPressed: () => Get.toNamed('/second-screen'), child: Text('Getx Named Navigation')),
-//             ),
-//             SizedBox(
-//               height: 20,
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-//
-// class SecondScreen extends StatelessWidget {
-//   const SecondScreen({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Second Screen'),
-//         centerTitle: true,
-//       ),
-//     );
-//   }
-// }
+
+
+
+/*
+class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('First Screen'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Navigation'),
+            SizedBox(height: 20),
+            SizedBox(
+              width: 200,
+              child: ElevatedButton(onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => SecondScreen()),
+                );
+              }, child: Text('Default Navigation')),
+            ),
+            SizedBox(height: 15),
+            SizedBox(
+              width: 200,
+              child: ElevatedButton(onPressed: () => Get.to(() => SecondScreen()), child: Text('Getx Navigation')),
+            ),
+            SizedBox(height: 50),
+            Divider(),
+            Text('Named Navigation'),
+            SizedBox(height: 20),
+            SizedBox(
+              width: 250,
+              child: ElevatedButton(onPressed: () {
+                Navigator.of(context).pushNamed('/second-screen');
+              }, child: Text('Default Named Navigation')),
+            ),
+            SizedBox(height: 15),
+            SizedBox(
+              width: 200,
+              child: ElevatedButton(onPressed: () => Get.toNamed('/second-screen'), child: Text('Getx Named Navigation')),
+            ),
+            SizedBox(height: 50),
+            Divider(),
+            Text('Pass Data betn Screens - GetX'),
+            SizedBox(height: 20),
+            SizedBox(
+              width: 250,
+              child: ElevatedButton(onPressed: () {
+                Navigator.of(context).pushNamed('/second-screen');
+              }, child: Text('Default Named Navigation')),
+            ),
+            SizedBox(height: 15),
+            SizedBox(
+              width: 200,
+              child: ElevatedButton(onPressed: () => Get.toNamed('/second-screen'), child: Text('Getx Named Navigation')),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Screen'),
+        centerTitle: true,
+      ),
+    );
+  }
+}
+*/
 
 class ResponsiveDesignScreen extends StatelessWidget {
   const ResponsiveDesignScreen({super.key});
@@ -109,13 +113,20 @@ class ResponsiveDesignScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TSiteTemplate(
-        desktop: DashboardDesktopScreen(),
-        tablet: DashboardDesktopScreen(),
-        mobile: DashboardDesktopScreen());
+        desktop: DashboardScreen(
+          details: Detail.detail,
+        ),
+        tablet: DashboardScreen(
+          details: Detail.detail,
+        ),
+        mobile: DashboardScreen(
+          details: Detail.detail,
+        ));
+    // mobile: DashboardDesktopScreen());
   }
 }
 
-class Tablet extends StatelessWidget {
+/*class Tablet extends StatelessWidget {
   const Tablet({super.key});
 
   @override
@@ -413,4 +424,4 @@ class Desktop extends StatelessWidget {
       ),
     );
   }
-}
+}*/

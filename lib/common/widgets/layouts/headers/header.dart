@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:trashee_dashboard/common/widgets/images/t_rounded_images.dart';
 import 'package:trashee_dashboard/utils/constants/colors.dart';
 import 'package:trashee_dashboard/utils/constants/image_strings.dart';
 import 'package:trashee_dashboard/utils/constants/sizes.dart';
 import 'package:trashee_dashboard/utils/device/device_utility.dart';
 
+import '../../../../routes/routes.dart';
+
 class THeader extends StatelessWidget implements PreferredSizeWidget {
   const THeader({super.key, this.scaffoldKey});
   // GlobalKey to access the scaffold state
   final GlobalKey<ScaffoldState>? scaffoldKey;
+
+  // Logout Function using SharedPreferences
+  Future<void> _logout() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.clear(); // Remove all saved login data
+    Get.offAllNamed(TRoutes.login); // Navigate to login screen
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +33,7 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
       ),
       padding: EdgeInsets.symmetric(horizontal: TSizes.md, vertical: TSizes.sm),
       child: AppBar(
-        backgroundColor:TColors.primary,
+        backgroundColor: TColors.primary,
         leading: !TDeviceUtils.isDesktopScreen(context)
             ? IconButton(
                 onPressed: () => scaffoldKey?.currentState?.openDrawer(),
@@ -34,7 +45,8 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
                 child: TextFormField(
                   decoration: InputDecoration(
                     filled: true, // Enables the background color
-                    fillColor: TColors.body, // Light gray background for better UI
+                    fillColor:
+                        TColors.body, // Light gray background for better UI
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: TColors.body),
                       borderRadius: BorderRadius.circular(12),
@@ -47,8 +59,7 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
                     hintText: 'Search...',
                   ),
                 ),
-
-        )
+              )
             : null,
         // Action
         actions: [
@@ -70,13 +81,26 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
               SizedBox(
                 width: TSizes.sm,
               ),
-              if(!TDeviceUtils.isMobileScreen(context))
-              Column(
-                children: [
-                  Text('Trashee' , style: Theme.of(context).textTheme.titleLarge,),
-                  Text('support@Trashee.com' , style: Theme.of(context).textTheme.labelMedium),
-                ],
-              )
+              if (!TDeviceUtils.isMobileScreen(context))
+                Column(
+                  children: [
+                    Text(
+                      'Trashee',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    Text('support@Trashee.com',
+                        style: Theme.of(context).textTheme.labelMedium),
+                  ],
+                ),
+              SizedBox(width: TSizes.spaceBtwItems),
+
+              // Logout Button
+              IconButton(
+                onPressed: _logout,
+                icon: Icon(Iconsax.logout, color: Colors.white),
+                tooltip: 'Logout',
+                color: TColors.buttonSecondary,
+              ),
             ],
           ),
         ],

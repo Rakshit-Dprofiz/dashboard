@@ -3,7 +3,6 @@ import 'package:trashee_dashboard/utils/constants/sizes.dart';
 import '../../../utils/constants/colors.dart';
 import '../widgets/login_form.dart';
 import '../widgets/login_header.dart';
-import 'login_desktop_tablet.dart';
 
 class LoginScreenMobile extends StatelessWidget {
   const LoginScreenMobile({super.key});

@@ -60,6 +60,7 @@ dependencies:
   # State Management
   get: ^4.6.6
   get_storage: ^2.1.1
+  shared_preferences: ^2.5.2
 
   # Icons
   cupertino_icons: ^1.0.8
@@ -94,7 +95,6 @@ flutter:
     - assets/images/banners/
     - assets/images/reviews/
     - assets/images/products/
-    - assets/icons/categories/
     - assets/images/animations/
     - assets/icons/payment_methods/
     - assets/images/on_boarding_images/

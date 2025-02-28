@@ -253,9 +253,7 @@ import 'package:get/get.dart';
 import 'package:trashee_dashboard/common/widgets/images/t_rounded_images.dart';
 import 'package:trashee_dashboard/utils/constants/colors.dart';
 import 'package:trashee_dashboard/utils/constants/image_strings.dart';
-import 'package:trashee_dashboard/utils/constants/sizes.dart';
 
-import '../../../../routes/app_routs.dart';
 import '../../../../routes/routes.dart';
 
 class TSideBar extends StatelessWidget {

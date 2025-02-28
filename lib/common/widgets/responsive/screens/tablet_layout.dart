@@ -4,14 +4,14 @@ import 'package:trashee_dashboard/common/widgets/layouts/sidebars/sidebar.dart';
 
 class TabletLayout extends StatelessWidget {
    TabletLayout({super.key, this.body});
-  final GlobalKey<ScaffoldState> scaffoldKey =  GlobalKey();
+  // final GlobalKey<ScaffoldState> scaffoldKey =  GlobalKey();
   final Widget? body;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
+      // key: scaffoldKey,
       drawer: const TSideBar(),
-      appBar: THeader(scaffoldKey: scaffoldKey),
+      appBar: THeader(),
       body: body ?? SizedBox(),
     );
   }

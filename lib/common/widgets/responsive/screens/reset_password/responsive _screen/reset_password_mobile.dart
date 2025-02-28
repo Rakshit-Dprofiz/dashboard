@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trashee_dashboard/common/widgets/layouts/templates/login_template.dart';
 import 'package:trashee_dashboard/utils/constants/sizes.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 
 import '../../../../../../routes/routes.dart';
 import '../../../../../../utils/constants/image_strings.dart';

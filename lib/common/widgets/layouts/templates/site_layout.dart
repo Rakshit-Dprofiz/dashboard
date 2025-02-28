@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trashee_dashboard/app.dart';
 import 'package:trashee_dashboard/common/widgets/responsive/responsive_design.dart';
 import 'package:trashee_dashboard/common/widgets/responsive/screens/desktop_layout.dart';
 import 'package:trashee_dashboard/common/widgets/responsive/screens/mobile_layout.dart';

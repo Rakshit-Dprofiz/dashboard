@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:trashee_dashboard/app.dart';
 import 'package:trashee_dashboard/common/widgets/layouts/templates/login_template.dart';
 import 'package:trashee_dashboard/utils/constants/colors.dart';
-import 'package:trashee_dashboard/utils/constants/image_strings.dart';
-import 'package:trashee_dashboard/utils/constants/sizes.dart';
-import 'package:trashee_dashboard/utils/constants/text_strings.dart';
-
-import '../../../routes/routes.dart';
 import '../widgets/login_form.dart';
 import '../widgets/login_header.dart';
 

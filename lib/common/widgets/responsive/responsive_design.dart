@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:trashee_dashboard/app.dart';
 
 class TResponsiveWidget extends StatelessWidget {
   const TResponsiveWidget({super.key , required this .desktop ,required this .tablet ,required this .mobile });

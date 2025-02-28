@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trashee_dashboard/common/widgets/layouts/templates/login_template.dart';
-import 'package:trashee_dashboard/utils/constants/spacing_style.dart';
 import 'package:trashee_dashboard/utils/constants/text_strings.dart';
 
 import '../../../../../../routes/routes.dart';
