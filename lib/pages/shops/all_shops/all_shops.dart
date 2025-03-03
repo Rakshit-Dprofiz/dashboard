@@ -561,6 +561,7 @@ class MyData extends DataTableSource {
           IconButton(
             icon: const Icon(Iconsax.eye3, color: Colors.red),
             onPressed: () {
+              Get.to(() => ShopDetailPage(), arguments: data);
             },
           ),
         ),

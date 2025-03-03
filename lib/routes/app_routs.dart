@@ -17,8 +17,12 @@ import '../pages/offers/rejected_offers/rejected_offers.dart';
 import '../pages/pay_and_plan/payments/payment.dart';
 import '../pages/pay_and_plan/subscription_plan/subscription_plan.dart';
 import '../pages/shops/all_shops/all_shops.dart';
+import '../pages/shops/all_shops/shops detail/shop_detail_page.dart';
 import '../pages/shops/approval_shops/approval_shop.dart';
+import '../pages/shops/approval_shops/edit_detail/edit_details.dart';
 import '../pages/shops/approval_waiting_shops/approval_waiting_shops.dart';
+import '../pages/shops/approval_waiting_shops/approve/approval.dart';
+import '../pages/shops/approval_waiting_shops/approve/disapprove.dart';
 import '../pages/shops/rejected_shops/rejected_shops.dart';
 import '../pages/user/customer.dart';
 
@@ -26,7 +30,11 @@ class TAppRoute {
   static final List<GetPage> pages = [
     // GetPage(name: TRoutes.firstScreen, page: () => const FirstScreen()),
     // GetPage(name: TRoutes.secondScreen, page: () => const SecondScreen()),
-    GetPage(name: TRoutes.dashboard, page: () => DashboardScreen(details: Detail.detail ,)),
+    GetPage(
+        name: TRoutes.dashboard,
+        page: () => DashboardScreen(
+              details: Detail.detail,
+            )),
     GetPage(name: TRoutes.login, page: () => LoginScreen()),
     GetPage(name: TRoutes.sign, page: () => SignInScreen()),
     GetPage(name: TRoutes.forgetPassword, page: () => ForgetPasswordScreen()),
@@ -36,13 +44,26 @@ class TAppRoute {
     // Shops
     GetPage(name: TRoutes.allShops, page: () => AllShopsScreen()),
     GetPage(name: TRoutes.approvalShops, page: () => ApprovalShopsScreen()),
+    GetPage(name: TRoutes.shopDetailPage, page: () => ShopDetailPage()),
+    GetPage(
+        name: TRoutes.editShopDetailsScreen,
+        page: () => EditShopDetailsScreen()),
     GetPage(
         name: TRoutes.approvalWaitingShops,
-        page: () => ApprovalWaitingShopScreen()),
-    GetPage(name: TRoutes.rejectedShops, page: () => RejectedShopsScreen()),
+        page: () => ApprovalWaitingShopsScreen()),
+    GetPage(name: TRoutes.rejectedShops, page: () => RejectedShops()),
+    GetPage(
+      name: TRoutes.approvalScreen,
+      page: () => ApprovalScreen(), // ✅ No shopData needed in constructor
+    ),GetPage(
+      name: TRoutes.disapprovalScreen,
+      page: () => DisapprovalScreen(), // ✅ No shopData needed in constructor
+    ),
+
+
 
     // Offers
-    GetPage(name: TRoutes.allOffers, page: () => AllOffersScreen()),
+    GetPage(name: TRoutes.allOffers, page: () => AllOfferScreen()),
     GetPage(
         name: TRoutes.individualApprovedOffers,
         page: () => IndividualApprovedOffersScreen()),

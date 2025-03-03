@@ -5,7 +5,11 @@ class TRoutes {
   static const dashboard = '/dashboard';
   static const resetPassword = '/reset-password/:email';
   static const allShops = '/all-shops';
+  static const editShopDetailsScreen = '/Edit-Shop-Details-Screen';
+  static const shopDetailPage = '/Shop-Detail-Page';
   static const approvalShops = '/approval-shops';
+  static const approvalScreen = '/Approval-Screen';
+  static const disapprovalScreen = '/Disapproval-Screen';
   static const approvalWaitingShops = '/approval-waiting-shops';
   static const rejectedShops = '/rejected-shops';
   static const allOffers = '/all-Offers';
