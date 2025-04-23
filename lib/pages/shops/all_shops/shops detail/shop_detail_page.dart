@@ -538,6 +538,12 @@ class ShopDetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: const Icon(Icons.arrow_back, color: TColors.textPrimary),
+            ),
             Text(
               'Product List / Shop Detail',
               style: TextStyle(

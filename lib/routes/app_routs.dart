@@ -1,13 +1,11 @@
 import 'package:get/get.dart';
+import 'package:trashee_dashboard/app.dart';
 import 'package:trashee_dashboard/common/widgets/responsive/screens/forget_password/forget_password.dart';
 import 'package:trashee_dashboard/common/widgets/responsive/screens/reset_password/reset_password.dart';
 import 'package:trashee_dashboard/features.sign/screens/sign_in.dart';
-import 'package:trashee_dashboard/pages/dashboard/features/class/detail.dart';
-
 import 'package:trashee_dashboard/routes/routes.dart';
 import '../features.login/screens/login.dart';
 import '../pages/account_pages/profile.dart';
-import '../pages/dashboard/pages/dashboard.dart';
 import '../pages/offers/all_offers/all_offers.dart';
 import '../pages/offers/bulk_approval_waiting_offers/bulk_approval_waiting_offers.dart';
 import '../pages/offers/bulk_approved_offers/bulk_approved_offers.dart';
@@ -30,11 +28,13 @@ class TAppRoute {
   static final List<GetPage> pages = [
     // GetPage(name: TRoutes.firstScreen, page: () => const FirstScreen()),
     // GetPage(name: TRoutes.secondScreen, page: () => const SecondScreen()),
-    GetPage(
-        name: TRoutes.dashboard,
-        page: () => DashboardScreen(
-              details: Detail.detail,
-            )),
+    // GetPage(
+    //   name: TRoutes.dashboard,
+    //   page: () => DashboardScreen(
+    //     details: Detail.detail,
+    //   ),
+    // ),
+    GetPage(name: TRoutes.ResponsiveDesignScreen, page: () => ResponsiveDesignScreen()),
     GetPage(name: TRoutes.login, page: () => LoginScreen()),
     GetPage(name: TRoutes.sign, page: () => SignInScreen()),
     GetPage(name: TRoutes.forgetPassword, page: () => ForgetPasswordScreen()),

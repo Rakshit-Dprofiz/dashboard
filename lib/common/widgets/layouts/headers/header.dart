@@ -97,7 +97,7 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
               // Logout Button
               IconButton(
                 onPressed: _logout,
-                icon: Icon(Iconsax.logout, color: Colors.white),
+                icon: Icon(Iconsax.logout, color: Colors.black),
                 tooltip: 'Logout',
                 color: TColors.buttonSecondary,
               ),

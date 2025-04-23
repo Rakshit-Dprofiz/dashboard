@@ -590,6 +590,26 @@ class AllShopsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            Row(
+              children: [
+                IconButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  icon: const Icon(Icons.arrow_back, color: TColors.textPrimary),
+                ),
+                const SizedBox(width: 8),
+                const Text(
+                  "All Shop",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: TColors.textPrimary,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
             // Search Bar
             TextFormField(
               controller: controller.searchTextController,

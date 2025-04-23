@@ -396,6 +396,7 @@ final List<MenuItem> menuItems = [
     MenuItem(icon: Icons.add, title: 'Individual Approval Waiting Offers', route: TRoutes.individualApprovedWaitingOffers),
     MenuItem(icon: Icons.ice_skating, title: 'Bulk Approval Offers', route: TRoutes.bulkApprovedOffers),
     MenuItem(icon: Icons.ice_skating, title: 'Bulk Approval Waiting Offers', route: TRoutes.bulkApprovedWaitingOffers),
+    MenuItem(icon: Icons.ice_skating, title: 'Rejected Offers', route: TRoutes.rejectedOffers),
   ], route: ''),
 
   // Users

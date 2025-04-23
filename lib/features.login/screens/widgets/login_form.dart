@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trashee_dashboard/features.sign/screens/sign_in.dart';
+import 'package:trashee_dashboard/routes/routes.dart';
 
 import '../../../app.dart';
 import '../../../utils/constants/colors.dart';
@@ -94,12 +96,9 @@ class TLoginForm extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ResponsiveDesignScreen()),
-                    );
+                    Get.toNamed(TRoutes.ResponsiveDesignScreen);
                   },
+
                   child: Text(TTexts.signIn),
                 )),
             SizedBox(

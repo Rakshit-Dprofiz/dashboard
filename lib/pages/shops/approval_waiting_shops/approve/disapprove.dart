@@ -112,6 +112,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:trashee_dashboard/utils/constants/colors.dart';
 
 class DisapprovalScreen extends StatelessWidget {
   const DisapprovalScreen({super.key}); // ✅ No required shopData
@@ -132,6 +133,10 @@ class DisapprovalScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              IconButton(
+                icon: const Icon(Icons.arrow_back, color: TColors.textPrimary),
+                onPressed: () => Get.back(),
+              ),
               Container(
                 width: screenWidth * 0.8,
                 decoration: BoxDecoration(
@@ -154,7 +159,7 @@ class DisapprovalScreen extends StatelessWidget {
                       width: double.infinity,
                       color: Colors.grey[300],
                       alignment: Alignment.center,
-                      child: const Text("Table Data Here", style: TextStyle(fontSize: 16)),
+                      child: const Text("Image Here ", style: TextStyle(fontSize: 16)),
                     ),
                     const SizedBox(height: 16),
 

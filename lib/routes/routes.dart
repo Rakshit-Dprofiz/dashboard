@@ -3,6 +3,7 @@ class TRoutes {
   static const sign = '/login';
   static const forgetPassword = '/forget-password/';
   static const dashboard = '/dashboard';
+  static const ResponsiveDesignScreen = '/dashboard';
   static const resetPassword = '/reset-password/:email';
   static const allShops = '/all-shops';
   static const editShopDetailsScreen = '/Edit-Shop-Details-Screen';
